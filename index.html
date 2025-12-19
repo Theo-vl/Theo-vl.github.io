@@ -14,7 +14,8 @@
         <a href="./index.html">Accueil</a> |
         <a href="./projets.html">Projets</a> |
         <a href="./competences.html">Compétences</a> |
-        <a href="./contact.html">Contact</a>
+        <a href="#formulaire">Contact</a>
+
     </nav>
     <header>
         <!-- un seul h1 par page -->
@@ -60,12 +61,64 @@
                     </table>
                  </div>
                  <div>
-                    <h5>Les liens</h5>
+                    <h5><span>&#8594;</span>Les liens</h5>
                     <!-- _blank pour ouvrir dans un nouvel onglet -->
                     <a href="https://htmlcheatsheet.com"target="_blank">HTML Cheatsheet</a>
                  </div>
+                 <div>
+                    <h6><span>&#128190;</span>Videos</h6>
+                    <video src="./video.mp4" height="200" autoplay muted loop></video>
+                 </div>
+            </section>
+            <section id="formulaire">
+                <h2>Les formulaires</h2>
+                <form action="">
+                    <!-- for et id pour lier le label et l'input -->
+                    <label for="Nom">Nom</label>
+                    <input type="text" id="Nom" placeholder="Entrez votre nom"><br>
+
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="Entrez votre age" value="18"><br>
+
+                    <!-- input de type select -->
+                     <label for="gender">Genre</label>
+                     <select id="gender">
+                        <option value="homme">Homme</option>
+                        <option value="femme">Femme</option>
+                        <option value="autre">Autre</option>
+                     </select>
+
+                    <!-- input de type radio -->
+                    <div>
+                        <input type="radio" name="type" id="human" checked>
+                        <label for="human">Humain</label>
+                        <input type="radio" name="type" id="dog">
+                        <label for="dog">Chien</label>
+                        <input type="radio" name="type" id="cat">
+                        <label for="cat">Chat</label>
+                    </div>
+                    <div>
+                        <textarea placeholder="Votre message..." cols="30" rows="5"></textarea>
+                    </div>
+                    <div>
+                        <!-- input de la checkbox -->
+                        <input type="checkbox" id="cgv">
+                        <label for="cgv">Accepter les conditions générales</label><br>
+
+                        <!-- input de type submit permet de valider -->
+                        <input type="submit" value="Envoyer le formulaire">
+
+                    </div>
+                </form>
+                <button>ceci est un bouton</button>
             </section>
         </main>
+
+        <!-- mail est envoie de fichiers -->
+         <footer>
+            <a href="mailto:casimir9189@gmail.com">Envoyer un mail</a><br>
+            <a href="./notice.txt" download>Télécharger la notice</a>
+         </footer>
     </header>
     <h2>
         Presentation de mon portfolio fait maison
