@@ -3,25 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- titre de la page -->
     <title>Portfolio Theo</title>
+    <!-- icon de la page -->
+    <link rel="shortcut icon" href="./icon page.jpg">
 </head>
 <body>
+    <nav>
+        <!-- UL = Unordered List (liste non ordonnée) -->
+        <a href="./index.html">Accueil</a> |
+        <a href="./projets.html">Projets</a> |
+        <a href="./competences.html">Compétences</a> |
+        <a href="./contact.html">Contact</a>
+    </nav>
     <header>
-        <h1>
-            Portfolio Theo
-        </h1>
-        <a href="about.html">
-            A propos
-        </a>
+        <!-- un seul h1 par page -->
+        <h1>Portfolio Theo</h1>
+        <p>
+            <em>Présentation de mon portfolio fait maison</em>
+            <strong>Bienvenue sur mon portfolio !</strong>
+        </p>
+        <main>
+            <section>
+                <h2>Ordered list</h2>
+                <ol>
+                    <li>Ceci est une</li>
+                    <li>liste dans</li>
+                    <li>l'ordre</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Image en HTML</h3>
+                <img src="./porsche.jpg" height="200" alt="image-porsche">
+                <!-- l'alt de l'image est pour l'accessibilité ou si l'image ne charge pas -->
+                 <div>
+                    <h4>Tableau</h4>
+                    <table border="4" cellpadding="10" cellspacing="5" style="text-align: center">
+                        <!-- thead est pour l'entete du tableau -->
+                         <thead>
+                            <tr>
+                                <th>Col 1</th>
+                                <th>Col 2</th>
+                                <th>Col 3</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <tr>
+                                <td rowspan="2">Cell 1</td>
+                                <td>Cell 2</td>
+                                <td>Cell 3</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Cell 4</td>
+                            </tr>
+                         </tbody>
+                    </table>
+                 </div>
+                 <div>
+                    <h5>Les liens</h5>
+                    <!-- _blank pour ouvrir dans un nouvel onglet -->
+                    <a href="https://htmlcheatsheet.com"target="_blank">HTML Cheatsheet</a>
+                 </div>
+            </section>
+        </main>
     </header>
-    <h1>
+    <h2>
         Presentation de mon portfolio fait maison
-    </h1>
+    </h2>
     But de ce portfolio :<br>
     - Apprendre a faire un site web de A a Z<br>
     - Comprendre comment fonctionne et comment modifier du code<br>
     - Me familiariser avec les outils comme vs code, github, etc<br>
     - Avoir un portfolio simple et efficace<br>
-    - Avoir une base solidepour faire evoluer mon portfolio dans le futur<br>
+    - Avoir une base solide pour faire evoluer mon portfolio dans le futur<br>
 </body>
 </html>
