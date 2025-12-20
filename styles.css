@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "DM serie", Verdana;
+    background: url(./assets/images/bg.jpg) center/cover;
+    /* vh = 100% de la taille de l'ecran (viewport height) */
+    min-height: 100vh;
+}
+
+nav {
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    margin: 0;
+    border-radius: 0 0 50px 50px;
+}
+
+.raccourcis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 50px;
+}
