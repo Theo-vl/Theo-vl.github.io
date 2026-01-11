@@ -1,19 +1,17 @@
 * {
     margin: 0;
-    padding: 0;
 }
 
 body {
     font-family: "DM serie", Verdana;
-    /* background: url("../assets/images/porsche.jpg") center/cover; */
     /* vh = 100% de la taille de l'ecran (viewport height) */
+    background: url(../assets/images/crayon\ fond.jpg) center/cover;
     min-height: 100vh;
-    background-color: rgba(255, 255, 255, 0.664);
 }
 
 nav {
     height: 50px;
-    background-color: rgb(250, 246, 30);
+    background-color: rgb(95, 95, 95);
     width: 100%;
     margin: 0;
     border-radius: 0 0 20px 20px;
@@ -25,11 +23,12 @@ nav {
     align-items: center;
     height: 100%;
     gap: 30px;
-    margin-left: 25px;
+    margin-left: 35px;
 }
 
 .NomHaut {
-    text-align: center;
+    text-align: right;
+    margin-right: 35px;
     font-size: 20px;
     font-weight: bold;
     margin-left: auto;
