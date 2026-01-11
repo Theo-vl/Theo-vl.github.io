@@ -1,0 +1,42 @@
+name: Deploy html (and assets) to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Prepare publish directory
+        run: |
+          rm -rf out
+          mkdir out
+          # Copy site HTML pages
+          if [ -d "./html" ]; then
+            cp -r ./html/* out/ || true
+          fi
+          # Copy CSS if it exists at repo root
+          if [ -d "./css" ]; then
+            cp -r ./css out/ || true
+          fi
+          # Copy assets (images, etc.) if it exists at repo root
+          if [ -d "./assets" ]; then
+            cp -r ./assets out/ || true
+          fi
+          # If you keep other asset folders, add cp lines above
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: out
+          allow_empty_commit: true
