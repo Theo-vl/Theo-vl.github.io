@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+a {
+  text-decoration: none; /* enlève le soulignement */
+  color: inherit;        /* prend la couleur du texte parent */
+}
+
 body {
     font-family: "DM serie", Verdana;
     /* vh = 100% de la taille de l'ecran (viewport height) */
@@ -12,7 +17,7 @@ body {
 
 nav {
     height: 50px;
-    background-color: rgb(250, 246, 30);
+    background-color: rgb(95, 95, 95);    
     width: 100%;
     margin: 0;
     border-radius: 0 0 20px 20px;
@@ -24,12 +29,14 @@ nav {
     align-items: center;
     height: 100%;
     gap: 30px;
-    margin-left: 25px;
+    margin-left: 35px;
 }
 
-.NomHaut {
-    text-align: center;
+.absolute-right {
+    color: rgb(209,209,209);
+    margin-left: auto;
     font-size: 20px;
     font-weight: bold;
-    margin-left: auto;
+    padding-right: 25px;
+    align-self: center;
 }
