@@ -48,3 +48,16 @@ nav {
     padding-right: 25px;
     align-self: center;
 }
+
+.btn {
+  padding: 10px 10px;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(106, 106, 106, 0.5);
+}

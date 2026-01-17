@@ -9,18 +9,46 @@ a {
 }
 
 body {
-    font-family: "DM serie", Verdana;
+    font-family: 'Playfair Display', Verdana, serif;
     /* vh = 100% de la taille de l'ecran (viewport height) */
+    background: url("../assets/images/crayon fond.jpg") center/cover;
     min-height: 100vh;
-    background-color: rgba(215, 34, 34, 0.664);
 }
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 3px 10px 9px #00000066;
+    color: rgb(238, 242, 182);
+    font-family: 'BBH', sans-serif;
+
+}
+
 
 nav {
     height: 50px;
-    background-color: rgb(95, 95, 95);    
+    background-color: rgba(199, 199, 199, 0.664);
     width: 100%;
     margin: 0;
     border-radius: 0 0 20px 20px;
+}
+
+main {
+    background-color: rgba(147, 147, 147, 0.2);
+    margin-top: 50px;
+    margin-right: 100px;
+    margin-left: 670px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 0 15px 15px #000000;
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .raccourcis {
@@ -39,4 +67,17 @@ nav {
     font-weight: bold;
     padding-right: 25px;
     align-self: center;
+}
+
+.btn {
+  padding: 10px 10px;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(106, 106, 106, 0.8);
 }

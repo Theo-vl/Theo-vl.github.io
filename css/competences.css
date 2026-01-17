@@ -9,10 +9,42 @@ a {
 }
 
 body {
-    font-family: "DM serie", Verdana;
-    /* vh = 100% de la taille de l'ecran (viewport height) */
-    min-height: 100vh;
-    background-color: rgba(131, 222, 20, 0.664);
+    background-image: url("../assets/images/gary backg.jpg");
+    main {
+    min-height: 500px;
+    width: 100%;
+}
+
+.flexbox, .absolute {
+    border: 2px solid rgb(175, 31, 168);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    min-height: 600px;
+}
+
+/* FLEXBOX */
+/* sert a repartir equitablement les 3 boites */
+.flexbox ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexbox li {
+    list-style: none;
+    height: 160px;
+    width: 160px;
+    margin: 10px;
+    background-color: turquoise;
+    /* centrer un unique element verticalement et horizontalement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 }
 
 nav {
@@ -40,4 +72,17 @@ nav {
     font-weight: bold;
     padding-right: 25px;
     align-self: center;
+}
+
+.btn {
+  padding: 10px 10px;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(106, 106, 106, 0.5);
 }
