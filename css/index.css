@@ -26,6 +26,7 @@ body {
     /* vh = 100% de la taille de l'ecran (viewport height) */
     background: url("../assets/images/crayon fond.jpg") center/cover;
     min-height: 100vh;
+    overflow: hidden;               /* Empêche la scrollbar d'apparaître */
 }
 
 h1 {

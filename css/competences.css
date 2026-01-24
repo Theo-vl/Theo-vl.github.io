@@ -1,59 +1,67 @@
+@font-face {
+    font-family: 'BBH';
+    src: url("../assets/fonts/BBHHegarty-Regular.ttf") format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url("../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf") format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     margin: 0;
-    padding: 0;
 }
 
 a {
   text-decoration: none; /* enlève le soulignement */
   color: inherit;        /* prend la couleur du texte parent */
-}
+}   
 
 body {
-    background-image: url("../assets/images/gary backg.jpg");
-    main {
-    min-height: 500px;
-    width: 100%;
+    font-family: 'Playfair Display', Verdana, serif;
+    /* vh = 100% de la taille de l'ecran (viewport height) */
+    background: url("../assets/images/gary\ backg.jpg") center/cover;
+    min-height: 100vh;
 }
 
-.flexbox, .absolute {
-    border: 2px solid rgb(175, 31, 168);
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 20px;
-    min-height: 600px;
-}
-
-/* FLEXBOX */
-/* sert a repartir equitablement les 3 boites */
-.flexbox ul {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.flexbox li {
-    list-style: none;
-    height: 160px;
-    width: 160px;
-    margin: 10px;
-    background-color: turquoise;
-    /* centrer un unique element verticalement et horizontalement */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 3px 10px 9px #00000066;
+    color: rgb(238, 242, 182);
+    font-family: 'BBH', sans-serif;
 
 }
 
 nav {
     height: 50px;
-    background-color: rgb(95, 95, 95);   
-    width: 100%;
+    background-color: rgba(199, 199, 199, 0.664);
     width: 100%;
     margin: 0;
     border-radius: 0 0 20px 20px;
+}
+
+main {
+    background-color: rgba(147, 147, 147, 0.2);
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 0 15px 15px #000000;
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .raccourcis {
@@ -84,5 +92,162 @@ nav {
 
 .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(106, 106, 106, 0.5);
+  box-shadow: 0 10px 30px rgba(106, 106, 106, 0.8);
+}
+
+/* ==================== FLEXBOX ====================
+   Le Flexbox permet de créer une mise en page flexible
+   où les éléments se distribuent automatiquement sur plusieurs lignes
+   ================================================== */
+
+/* Configuration du conteneur UL (liste) */
+.flexbox ul {
+    padding: 0;                    /* Enlève l'espacement par défaut de la liste */
+    display: flex;                 /* Active le mode flexbox */
+    flex-wrap: wrap;               /* Les boites vont à la ligne automatiquement */
+    justify-content: space-around;  /* Distribue les boites de manière équilibrée */
+    gap: 20px;                     /* Espace de 20px entre chaque boite */
+}
+
+/* Style de chaque boite LI (list item) */
+.flexbox li {
+    list-style: none;               /* Enlève le point de la liste */
+    height: 200px;                  /* Hauteur de la boite */
+    width: calc(50% - 10px);        /* 50% de largeur = 2 boites par ligne */
+    
+    /* Flexbox imbriqué pour centrer le contenu à l'intérieur */
+    display: flex;                  /* Active flexbox sur l'élément */
+    flex-direction: row;            /* Aligne les éléments horizontalement (texte à gauche, image à droite) */
+    justify-content: space-between; /* Distribue l'espace entre le texte et l'image */
+    align-items: center;            /* Centre verticalement */
+    border-radius: 10px;
+    overflow: hidden;               /* Coupe les contenus qui dépassent les coins */
+    font-weight: bold;              /* Texte en gras */
+    font-size: 1.2rem;              /* Taille du texte */
+    cursor: help;
+    transition: all 0.3s ease;      /* Animation lisse en 0.3 secondes */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Légère ombre pour la profondeur */
+}
+
+/* Images à l'intérieur des boites */
+.flexbox li img {
+    width: 140px;                   /* Largeur fixe de l'image */
+    height: 140px;                  /* Hauteur fixe de l'image */
+    object-fit: contain;            /* Ajuste l'image sans la recadrer */
+    margin-right: 10px;             /* Petit padding/espacement à droite de l'image */
+    flex-shrink: 0;                 /* Empêche l'image de rétrécir */
+}
+
+/* Conteneur du texte à l'intérieur de la boite */
+.flexbox li .box-text {
+    padding: 15px;                  /* Espace intérieur autour du texte */
+    text-align: left;               /* Aligne le texte à gauche */
+    background-color: rgba(255, 255, 255, 0.9);  /* Fond blanc semi-transparent */
+    flex: 1;                        /* Le texte prend l'espace restant */
+    font-size: 0.9rem;              /* Texte un peu plus petit */
+    color: #333;                    /* Texte gris foncé */
+    border-radius: 5px;             /* Coins arrondis du texte */
+    margin-left: 10px;              /* Espacement à gauche du texte */
+}
+
+/* Animation au survol avec la souris */
+.flexbox li:hover {
+    background-color: #00cccc;      /* Couleur un peu plus claire */
+    transform: scale(1.05);         /* Agrandit la boite de 5% */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Ombre plus prononcée */
+}
+
+.flexbox li.box-1 {
+    background-color: #3498db;  
+}
+
+.flexbox li.box-1 .box-text {
+    background-color: rgba(52, 152, 219, 0.2);
+    color: #1a5276;
+}
+
+.flexbox li.box-1:hover {
+    background-color: #2980b9;
+}
+
+.flexbox li.box-2 {
+    background-color: #e74c3c;
+}
+
+.flexbox li.box-2 .box-text {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #922b21;
+}
+
+.flexbox li.box-2:hover {
+    background-color: #c0392b;
+}
+
+.flexbox li.box-3 {
+    background-color: #27ae60;
+}
+
+.flexbox li.box-3 .box-text {
+    background-color: rgba(39, 174, 96, 0.2);
+    color: #145a32;
+}
+
+.flexbox li.box-3:hover {
+    background-color: #1e8449;
+}
+
+.flexbox li.box-4 {
+    background-color: #f39c12;
+}
+
+.flexbox li.box-4 .box-text {
+    background-color: rgba(243, 156, 18, 0.2);
+    color: #7d4e00;
+}
+
+.flexbox li.box-4:hover {
+    background-color: #d68910;
+}
+
+.flexbox li.box-5 {
+    background-color: #9b59b6;
+}
+
+.flexbox li.box-5 .box-text {
+    background-color: rgba(155, 89, 182, 0.2);
+    color: #4a235a;
+}
+
+.flexbox li.box-5:hover {
+    background-color: #7d3c98;
+}
+
+.flexbox li.box-6 {
+    background-color: #1abc9c;
+}
+
+.flexbox li.box-6 .box-text {
+    background-color: rgba(26, 188, 156, 0.2);
+    color: #0e5a42;
+}
+
+.flexbox li.box-6:hover {
+    background-color: #16a085;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+    main {
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .flexbox ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .flexbox li {
+        width: 100%;
+    }
 }
