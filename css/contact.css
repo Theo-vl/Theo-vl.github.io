@@ -4,6 +4,12 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Fjalla One';
+    src: url("../assets/fonts/FjallaOne.ttf") format('truetype');
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -30,12 +36,13 @@ body {
 }
 
 nav {
-    height: 50px;
+    height: 60px;
     background-color: rgb(95, 95, 95);
     width: 100%;
     margin: 0;
-    border-radius: 0 0 20px 20px;
-    font-family: 'DMSerie', sans-serif;
+    border-radius: 0 0 30px 30px;
+    font-family: 'FjallaOne', sans-serif;
+    font-size: larger;
 }
 
 .raccourcis {
