@@ -59,7 +59,7 @@ h1 {
 
 h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     color: rgb(177, 161, 90);
     text-shadow: 2px 4px 6px #00000066;
@@ -136,7 +136,7 @@ header {
 /* Style de chaque boite LI (list item) */
 .flexbox li {
     list-style: none;               /* Enlève le point de la liste */
-    height: 200px;                  /* Hauteur de la boite */
+    height: 500px;                  /* Hauteur de la boite */
     width: calc(49% - 5px);        /* 50% de largeur = 2 boites par ligne */
     
     /* Flexbox imbriqué pour centrer le contenu à l'intérieur */
@@ -150,13 +150,13 @@ header {
     font-size: 1.2rem;              /* Taille du texte */
     cursor: help;
     transition: all 0.3s ease;      /* Animation lisse en 0.3 secondes */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Légère ombre pour la profondeur */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);  /* Légère ombre pour la profondeur */
 }
 
 /* Images à l'intérieur des boites */
 .flexbox li img {
-    width: 140px;                   /* Largeur fixe de l'image */
-    height: 140px;                  /* Hauteur fixe de l'image */
+    width: 250px;                   /* Largeur fixe de l'image */
+    height: 250px;                  /* Hauteur fixe de l'image */
     object-fit: contain;            /* Ajuste l'image sans la recadrer */
     margin-right: 10px;             /* Petit padding/espacement à droite de l'image */    
     margin-left: 10px;              /* Décale l'image à droite */    
@@ -167,168 +167,48 @@ header {
 .flexbox li .box-text {
     padding: 15px;                  /* Espace intérieur autour du texte */
     text-align: center;               /* Aligne le texte à gauche */
-    background-color: rgba(255, 255, 255, 0.9);  /* Fond blanc semi-transparent */
+    background-color: rgba(255, 255, 255, 0);  /* Fond blanc semi-transparent */
     flex: 1;                        /* Le texte prend l'espace restant */
     font-size: 1.3rem;              /* Texte un peu plus petit */
     color: #333;                    /* Texte gris foncé */
     border-radius: 5px;             /* Coins arrondis du texte */
     margin-left: 10px;              /* Espacement à gauche du texte */
     transition: all 0.3s ease;      /* Animation lisse comme la boîte */
+    transform-origin: left center;  /* Point d'origine pour le scale */
     font-family: 'BitCount', sans-serif;
 }
 
+
 /* Animation au survol avec la souris */
 .flexbox li:hover {
-    background-color: #00cccc;      /* Couleur un peu plus claire */
+    background-color: #ffffff00;      /* Couleur un peu plus claire */
     transform: scale(1.05);         /* Agrandit la boite de 5% */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Ombre plus prononcée */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);  /* Ombre plus prononcée */
 }
 
 .flexbox li.box-1 {
-    background-color: #636262;  
+    background-color: #ffffff00;  
 }
 
 .flexbox li.box-1 .box-text {
-    background-color: #636262;
-    color: #2980b9;
+    background-color: #ffffff00;
+    color: #ffffff00;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .flexbox li.box-1:hover {
-    background-color: #2980b9;
+    background-color: #ffffff00;
+}
+
+.flexbox li:hover .box-text {
+    transform: scale(1.08);
 }
 
 .flexbox li.box-1:hover .box-text {
-    background-color: #2980b9;
-    color: #636262;    font-weight: bold;
+    background-color: #ffffff00;
+    color: #ffffff00;    font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);    font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-    
-.flexbox li.box-2 {
-    background-color: #636262;
-}
 
-.flexbox li.box-2 .box-text {
-    background-color: #636262;
-    color: #ff0000;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flexbox li.box-2:hover {
-    background-color: #c0392b;
-}
-
-.flexbox li.box-2:hover .box-text {
-    background-color: #c0392b;
-    color: #636262;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flexbox li.box-3 {
-    background-color: #636262;
-}
-
-.flexbox li.box-3 .box-text {
-    background-color: #636262;
-    color: #1e8449;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flexbox li.box-3:hover {
-    background-color: #1e8449;
-}
-
-.flexbox li.box-3:hover .box-text {
-    background-color: #1e8449;
-    color: #636262;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flexbox li.box-4 {
-    background-color: #636262;
-}
-
-.flexbox li.box-4 .box-text {
-    background-color: #636262;
-    color: #d68910;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flexbox li.box-4:hover {
-    background-color: #d68910;
-}
-
-.flexbox li.box-4:hover .box-text {
-    background-color: #d68910;
-    color: #636262;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flexbox li.box-5 {
-    background-color: #636262;
-}
-
-.flexbox li.box-5 .box-text {
-    background-color: #636262;
-    color: #7d3c98;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flexbox li.box-5:hover {
-    background-color: #7d3c98;
-}
-
-.flexbox li.box-5:hover .box-text {
-    background-color: #7d3c98;
-    color: #636262;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flexbox li.box-6 {
-    background-color: #636262;
-}
-
-.flexbox li.box-6 .box-text {
-    background-color: #636262;
-    color: #ff0000;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flexbox li.box-6:hover {
-    background-color: #16a085;
-}
-
-.flexbox li.box-6:hover .box-text {
-    background-color: #16a085;
-    color: #636262;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* RESPONSIVE */
-@media screen and (max-width: 900px) {
-    main {
-        margin-right: 50px;
-    }
-}
-
-@media screen and (max-width: 610px) {
-    .flexbox ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    .flexbox li {
-        width: 100%;
-    }
 }
