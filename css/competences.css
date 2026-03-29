@@ -32,6 +32,8 @@
 
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 a {
@@ -132,9 +134,17 @@ header {
     gap: 18px;
 }
 
+main ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 18px;
+}
+
 .flexbox li {
     list-style: none;
-    height: 200px;
+    min-height: 240px;
     width: calc(49% - 5px);
     display: flex;
     flex-direction: row;
@@ -160,7 +170,7 @@ header {
 
 .flexbox li .box-text {
     padding: 15px;
-    text-align: center;
+    text-align: left;
     background-color: rgba(255, 255, 255, 0.9);
     flex: 1;
     font-size: 1.3rem;
@@ -169,6 +179,8 @@ header {
     margin-left: 10px;
     transition: all 0.3s ease;
     font-family: 'BitCount', sans-serif;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .flexbox li:hover {
@@ -309,18 +321,78 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+@media screen and (max-width: 1200px) {
+    .raccourcis {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-left: 20px;
+        gap: 16px;
+    }
+
+    .flexbox ul,
+    main ul {
+        gap: 14px;
+    }
+
+    .flexbox li {
+        width: calc(50% - 12px);
+        min-height: 280px;
+    }
+
+    .flexbox li img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
 @media screen and (max-width: 900px) {
-    main {
-        margin-right: 50px;
+    nav {
+        padding: 0 18px;
+    }
+
+    .raccourcis {
+        justify-content: center;
+        margin-left: 0;
+        gap: 12px;
+    }
+
+    .absolute-right {
+        padding-right: 0;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .flexbox li,
+    main ul li {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .flexbox li img,
+    main ul li img {
+        width: 120px;
+        height: 120px;
+        margin: 0 0 10px 0;
+    }
+
+    .flexbox li .box-text,
+    main ul li .box-text {
+        width: 100%;
+        margin-left: 0;
     }
 }
 
 @media screen and (max-width: 610px) {
-    .flexbox ul {
+    .flexbox ul,
+    main ul {
         flex-direction: column;
         align-items: center;
     }
-    .flexbox li {
-        width: 100%;
-    }
 }
+

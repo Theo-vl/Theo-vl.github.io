@@ -32,16 +32,17 @@
 
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 a {
-  text-decoration: none; /* enlève le soulignement */
-  color: inherit;        /* prend la couleur du texte parent */
+  text-decoration: none;
+  color: inherit;
 }   
 
 body {
     font-family: 'Playfair Display', Verdana, serif;
-    /* vh = 100% de la taille de l'ecran (viewport height) */
     background: url("../assets/images/ProjetFond.jpg") center/cover;
     min-height: 100vh;
 }
@@ -126,64 +127,59 @@ header {
 }
 
 .flexbox ul {
-    padding: 0;                    /* Enlève l'espacement par défaut de la liste */
-    display: flex;                 /* Active le mode flexbox */
-    flex-wrap: wrap;               /* Les boites vont à la ligne automatiquement */
-    justify-content: space-around;  /* Distribue les boites de manière équilibrée */
-    gap: 18px;                     /* Espace de 20px entre chaque boite */
+    padding: 0;                    
+    display: flex;               
+    flex-wrap: wrap;              
+    justify-content: space-around;
+    gap: 18px;
 }
 
-/* Style de chaque boite LI (list item) */
 .flexbox li {
-    list-style: none;               /* Enlève le point de la liste */
-    height: 500px;                  /* Hauteur de la boite */
-    width: calc(49% - 5px);        /* 50% de largeur = 2 boites par ligne */
-    
-    /* Flexbox imbriqué pour centrer le contenu à l'intérieur */
-    display: flex;                  /* Active flexbox sur l'élément */
-    flex-direction: row;            /* Aligne les éléments horizontalement (texte à gauche, image à droite) */
-    justify-content: space-between; /* Distribue l'espace entre le texte et l'image */
-    align-items: center;            /* Centre verticalement */
+    list-style: none;               
+    min-height: 500px;             
+    width: calc(49% - 5px);       
+    display: flex;              
+    flex-direction: row;           
+    justify-content: space-between;
+    align-items: stretch;  
     border-radius: 10px;
-    overflow: hidden;               /* Coupe les contenus qui dépassent les coins */
-    font-weight: bold;              /* Texte en gras */
-    font-size: 1.2rem;              /* Taille du texte */
+    overflow: hidden;           
+    font-weight: bold;          
+    font-size: 1.2rem;        
     cursor: help;
-    transition: all 0.3s ease;      /* Animation lisse en 0.3 secondes */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);  /* Légère ombre pour la profondeur */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
 }
 
-/* Images à l'intérieur des boites */
 .flexbox li img {
-    width: 250px;                   /* Largeur fixe de l'image */
-    height: 250px;                  /* Hauteur fixe de l'image */
-    object-fit: contain;            /* Ajuste l'image sans la recadrer */
-    margin-right: 10px;             /* Petit padding/espacement à droite de l'image */    
-    margin-left: 10px;              /* Décale l'image à droite */    
-    flex-shrink: 0;                 /* Empêche l'image de rétrécir */
+    width: 250px;                
+    height: 250px;                
+    object-fit: contain;         
+    margin-right: 10px;          
+    margin-left: 10px;          
+    flex-shrink: 0;           
 }
 
-/* Conteneur du texte à l'intérieur de la boite */
 .flexbox li .box-text {
-    padding: 15px;                  /* Espace intérieur autour du texte */
-    text-align: center;               /* Aligne le texte à gauche */
-    background-color: rgba(255, 255, 255, 0);  /* Fond blanc semi-transparent */
-    flex: 1;                        /* Le texte prend l'espace restant */
-    font-size: 1.3rem;              /* Texte un peu plus petit */
-    color: #333;                    /* Texte gris foncé */
-    border-radius: 5px;             /* Coins arrondis du texte */
-    margin-left: 10px;              /* Espacement à gauche du texte */
-    transition: all 0.3s ease;      /* Animation lisse comme la boîte */
-    transform-origin: left center;  /* Point d'origine pour le scale */
+    padding: 15px;                 
+    text-align: left;              
+    background-color: rgba(255, 255, 255, 0);
+    flex: 1;                        
+    font-size: 1.3rem;             
+    color: #333;                
+    border-radius: 5px;       
+    margin-left: 10px;           
+    transition: all 0.3s ease;   
+    transform-origin: left center;
     font-family: 'BitCount', sans-serif;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
-
-/* Animation au survol avec la souris */
 .flexbox li:hover {
-    background-color: #ffffff00;      /* Couleur un peu plus claire */
-    transform: scale(1.05);         /* Agrandit la boite de 5% */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);  /* Ombre plus prononcée */
+    background-color: #ffffff00;      
+    transform: scale(1.05);        
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
 }
 
 .flexbox li.box-1 {
@@ -211,4 +207,68 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);    font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 
+}
+
+@media (max-width: 1200px) {
+    .raccourcis {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-left: 20px;
+        gap: 16px;
+    }
+
+    .flexbox ul {
+        gap: 14px;
+    }
+
+    .flexbox li {
+        width: calc(50% - 10px);
+        min-height: 520px;
+    }
+
+    .flexbox li img {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0 18px;
+    }
+
+    .raccourcis {
+        justify-content: center;
+        margin-left: 0;
+        gap: 12px;
+    }
+
+    .absolute-right {
+        padding-right: 0;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .flexbox ul {
+        gap: 16px;
+    }
+
+    .flexbox li {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .flexbox li img {
+        width: 180px;
+        height: 180px;
+        margin: 0 0 15px 0;
+    }
+
+    .flexbox li .box-text {
+        margin-left: 0;
+    }
 }
