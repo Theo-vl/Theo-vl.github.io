@@ -45,6 +45,8 @@ body {
     font-family: 'Playfair Display', Verdana, serif;
     background: url("../assets/images/ProjetFond.jpg") center/cover;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -130,18 +132,20 @@ header {
     padding: 0;                    
     display: flex;               
     flex-wrap: wrap;              
-    justify-content: space-around;
+    justify-content: center;
+    align-items: stretch;
     gap: 18px;
 }
 
 .flexbox li {
     list-style: none;               
-    min-height: 500px;             
-    width: calc(49% - 5px);       
-    display: flex;              
+    width: calc(48% - 18px);       
+    display: flex;               
     flex-direction: row;           
-    justify-content: space-between;
-    align-items: stretch;  
+    justify-content: flex-start;
+    align-items: center;  
+    padding: 24px 18px;
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     overflow: hidden;           
     font-weight: bold;          
@@ -155,7 +159,7 @@ header {
     width: 250px;                
     height: 250px;                
     object-fit: contain;         
-    margin-right: 10px;          
+    margin-right: 20px;          
     margin-left: 10px;          
     flex-shrink: 0;           
 }
@@ -163,50 +167,28 @@ header {
 .flexbox li .box-text {
     padding: 15px;                 
     text-align: left;              
-    background-color: rgba(255, 255, 255, 0);
+    background-color: transparent;
     flex: 1;                        
-    font-size: 1.3rem;             
+    font-size: 1.45rem;             
+    line-height: 1.35;
     color: #333;                
     border-radius: 5px;       
-    margin-left: 10px;           
+    margin-left: 0;           
     transition: all 0.3s ease;   
-    transform-origin: left center;
+    transform-origin: center;
     font-family: 'BitCount', sans-serif;
     overflow-wrap: break-word;
     word-break: break-word;
 }
 
 .flexbox li:hover {
-    background-color: #ffffff00;      
-    transform: scale(1.05);        
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
-}
-
-.flexbox li.box-1 {
-    background-color: #ffffff00;  
-}
-
-.flexbox li.box-1 .box-text {
-    background-color: #ffffff00;
-    color: #ffffff00;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.flexbox li.box-1:hover {
-    background-color: #ffffff00;
+    background-color: rgba(0, 0, 0, 0.18);
+    transform: scale(1.05);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 .flexbox li:hover .box-text {
-    transform: scale(1.08);
-}
-
-.flexbox li.box-1:hover .box-text {
-    background-color: #ffffff00;
-    color: #ffffff00;    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-
+    color: #111;
 }
 
 @media (max-width: 1200px) {
@@ -222,8 +204,8 @@ header {
     }
 
     .flexbox li {
-        width: calc(50% - 10px);
-        min-height: 520px;
+        width: calc(50% - 16px);
+        min-height: auto;
     }
 
     .flexbox li img {
